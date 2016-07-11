@@ -27,7 +27,7 @@ function one( number, increment ) {
     }
 }
 
-one( 10, 100 );
+// one( 10, 100 );
 
 // Powers
 function two( number ) {
@@ -36,7 +36,7 @@ function two( number ) {
     }
 }
 
-two( 8 );
+// two( 8 );
 
 // Add 2 n times
 function three( number ) {
@@ -46,7 +46,7 @@ function three( number ) {
     }
 }
 
-three( 10 );
+// three( 10 );
 
 // Add 3 starting from 3
 function four( number ) {
@@ -56,7 +56,7 @@ function four( number ) {
     }
 }
 
-four( 10 )
+// four( 10 )
 
 // Final Countdown
 function five( number ) {
@@ -65,7 +65,7 @@ function five( number ) {
     }
 }
 
-five( 10 );
+// five( 10 );
 
 // Repeater
 function six( number ) {
@@ -77,7 +77,7 @@ function six( number ) {
     }
 }
 
-six( 4 );
+// six( 4 );
 
 // Repeat count to 0-4, n-1 times
 function seven( number ) {
@@ -88,7 +88,7 @@ function seven( number ) {
     }
 }
 
-seven(4);
+// seven(4);
 
 function EvenOdd( number ) {
 
@@ -102,7 +102,7 @@ function EvenOdd( number ) {
 
 }
 
-EvenOdd();
+// EvenOdd();
 
 function FizzBuzz( number ) {
 
@@ -123,16 +123,53 @@ function FizzBuzz( number ) {
     }
 }
 
-FizzBuzz();
+// FizzBuzz();
 
-function whileLoop( numer ) {
-    var x = 0, y = 0, multiple = 0;
+function isMod3( number ) {
+    return ( (number % 3 ) === 0 );
+}
 
-    var mod3 = [], mod5 = [];
+function isMod5( number ) {
+    return ( (number % 5 ) === 0 );
+}
 
-    while (multiple < 1000) {
+function isMod( number ) {
+    return ( ( isMod3(number) || isMod5(number) ) === true );
+}
 
-    }   
+function whileLoop( number ) {
+    var sum = 0;
+
+    var x = 1; 
+    while (x < number) {
+
+        if ( isMod(x) ) {
+            sum += x;
+        }
+
+        x++;
+    }
+
+    console.log(sum);
 }
 
 
+// whileLoop( 1000 );
+
+function dispSign( number ) {
+    var str = "#";
+    number -= 1;
+
+    if( number > 0) {
+        dispSign( number );
+    }
+
+    for(var x=0; x < number; x++){
+        str += "#";
+    }
+    
+    console.log(str);
+
+}
+
+dispSign( 7 );
